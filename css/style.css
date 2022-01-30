@@ -1,0 +1,101 @@
+/* GLOBAL */
+:root {
+  --primary-font: "Arial", sans-serif;
+  --secondary-font: "Newsreader", "Times New Roman", "Times", serif;
+  --text-color: #000;
+  --fade-in-effect: fadein 800ms;
+  font-size: calc(2em + 0.5vw);
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  /* letter-spacing: -0.01em; */
+  /* cursor: ns-resize; */
+  /* --accent-color: #E2EECE; */
+  /* --text-color-secondary: #ECECEC; */
+  /* --background-color: #f5e9d2; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-animation: var(--fade-in-effect);
+  -moz-animation: var(--fade-in-effect);
+  -ms-animation: var(--fade-in-effect);
+  -o-animation: var(--fade-in-effect);
+  animation: var(--fade-in-effect);
+}
+
+::selection {
+  /* color: var(--text-color-secondary);
+  background: var(--text-color); */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  background-color: yellow;
+}
+
+/* PAGE LAYOUT*/
+div.page-layout {
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100%;
+}
+
+/* MAIN MENU */
+nav.menu-nav {
+  display: flex;
+  flex-direction: column;
+  background: #FFF;
+  margin: 1em;
+}
+
+.menu-nav h1 {
+  margin: 0;
+  font-size: calc(0.25em + 0.5vw);
+  padding: 0.5em 10px;
+}
+
+.menu-nav a {
+  border-bottom: 2px dotted var(--text-color);
+  padding: 0.25em 10px;
+}
+
+.menu-nav a:last-of-type, div.page-layout article:last-child a:last-of-type {
+  border-bottom: 0;
+}
+
+article {
+  border-radius: 1em;
+  border: 1px solid var(--text-color);
+}
+
+div.page-layout article:last-child {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 0;
+  border: 0;
+  box-shadow: 0em 0em rgba(255, 255, 0, 1);
+}
+
+div.page-layout article:last-child a {
+  border-bottom: 2px dotted var(--text-color);
+}
