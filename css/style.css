@@ -3,6 +3,7 @@
   --primary-font: "Helvetica Neue Regular", "Helvetica Neue", sans-serif;
   --secondary-font: "Newsreader", "Times New Roman", "Times", serif;
   --text-color: #000;
+  --second-color: #F7C58B;
   --fade-in-effect: fadein 800ms;
   font-size: calc(1em + 0.5vw);
   font-family: var(--primary-font);
@@ -69,6 +70,33 @@ header {
   grid-column: 1 / 4;
   grid-row: 1;
   border-bottom: 1px solid var(--text-color);
+  padding: 0.25em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header span {
+  display: flex;
+}
+
+header span:first-of-type {
+  flex-grow: 1;
+}
+
+div.circle-solid {
+  width: 1em;
+  /* width: 100%; */
+  height: 1em;
+  background: var(--text-color);
+  border-radius: 1em;
+}
+
+div.circle {
+  width: 1em;
+  height: 1em;
+  border: 1px solid var(--text-color);
+  border-radius: 1em;
 }
 
 /* MAIN BUBBLES */
@@ -90,9 +118,11 @@ main nav {
 }
 
 main nav h1 {
-  margin: 0;
-  font-size: calc(0.25em + 0.5vw);
-  padding: 0.5em 10px;
+  margin: 0 0 0.25em 0;
+  font-size: calc(0.45em + 0.5vw);
+  padding: 0.25em;
+  /* border: 1px solid var(--second-color); */
+  width: fit-content;
 }
 
 main nav a {
