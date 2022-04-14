@@ -9,5 +9,8 @@
   font-family: var(--primary-font);
   color: var(--text-color);
   font-size: 1em;
-  /* cursor: none; */
+}
+
+body {
+  cursor: url(cursor01.png);
 }
