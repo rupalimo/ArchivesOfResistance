@@ -2,7 +2,7 @@
 :root {
   --primary-font: "Helvetica Neue Regular", "Helvetica Neue", sans-serif;
   --secondary-font: "Newsreader", "Times New Roman", "Times", serif;
-  --text-color: #000;
+  --text-color: #FFF;
   --second-color: #F7C58B;
   --fade-in-effect: fadein 800ms;
   font-size: calc(1em + 0.5vw);
@@ -42,6 +42,20 @@ html, body {
 body {
   height: 100vh;
   width: 100vw;
+  background: linear-gradient(127deg, #191CFF, #7800FF, #FEBDFF);
+  background-size: 600% 100%;
+  animation: gradient 16s linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0%
+  }
+
+  100% {
+    background-position: 100%
+  }
 }
 
 h1 {
@@ -53,8 +67,9 @@ a {
   color: var(--text-color);
 }
 
-a:hover {
-  background-color: yellow;
+a:hover, .active {
+  background-color: rgba(0, 255, 255, 0.5);
+  transition: 0.15s ease-in-out;
 }
 
 /* PAGE LAYOUT*/
@@ -76,6 +91,10 @@ header {
   align-items: center;
 }
 
+header, footer {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 header span {
   display: flex;
   align-items: center;
@@ -90,18 +109,19 @@ span div+a {
   margin-left: 0.25em;
 }
 
-span:first-of-type div+a {
+span:first-of-type div+a, span p {
   margin-right: 0.25em;
+  margin-left: 0.25em;
 }
 
 span div+a {
   margin-right: 0.55em;
-  margin-left: 0.25em;
+  margin-left: 0;
 }
 
 header span p, footer span p {
-  margin: 0;
-  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 div.circle-solid {
@@ -109,13 +129,6 @@ div.circle-solid {
   /* width: 100%; */
   height: 1em;
   background: var(--text-color);
-  border-radius: 1em;
-}
-
-div.circle {
-  width: 1em;
-  height: 1em;
-  border: 2px solid var(--text-color);
   border-radius: 1em;
 }
 
@@ -133,7 +146,7 @@ main {
 main nav {
   display: flex;
   flex-direction: column;
-  background: #FFF;
+  /* background: #FFF; */
   margin: 1em;
 }
 
