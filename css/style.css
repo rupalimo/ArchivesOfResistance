@@ -58,6 +58,20 @@ body {
   }
 }
 
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 h1 {
   font-weight: normal;
 }
@@ -130,15 +144,15 @@ div.circle-solid {
   height: 1em;
   background: var(--text-color);
   border-radius: 1em;
+  animation: blink 1s cubic-bezier(0, 0, 0.63, 0.56) infinite;
 }
 
 /* MAIN BUBBLES */
 main {
   grid-row: 2;
-  grid-column: 1 / 4;
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: repeat(4, auto);
+  width: 100vw;
   grid-gap: 0.25em;
   padding: 0.25em;
 }
@@ -146,24 +160,23 @@ main {
 main nav {
   display: flex;
   flex-direction: column;
-  /* background: #FFF; */
-  margin: 1em;
+  border-bottom: 2px dotted var(--text-color);
+  /* margin: 1em; */
 }
 
 main nav h1 {
   margin: 0 0 0.25em 0;
   font-size: calc(0.45em + 0.5vw);
   padding: 0.25em;
-  /* border: 1px solid var(--second-color); */
   width: fit-content;
 }
 
 main nav a {
-  border-bottom: 2px dotted var(--text-color);
   padding: 0.25em 10px;
+  font-size: 3em;
 }
 
-main nav a:last-of-type, main article:nth-child(8) a:last-of-type {
+main nav:last-of-type {
   border-bottom: 0;
 }
 
