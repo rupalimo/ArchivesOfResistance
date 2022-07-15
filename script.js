@@ -1,6 +1,6 @@
 let currentTime = new Date()
 let monthNum = currentTime.getMonth()
-let day = currentTime.getDay()
+let day = currentTime.getDay()+3
 let year = currentTime.getFullYear()
 let hour = currentTime.getHours()
 let min = currentTime.getMinutes()
